@@ -2,7 +2,7 @@
 # Headless e2e #
 ################
 FROM ubuntu:14.04.1
-MAINTAINER Leo Gallucci <elgalu3@gmail.com>
+MAINTAINER Artem Soldatkin <a.soldatkin@corp.badoo.com>
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
@@ -102,8 +102,8 @@ RUN x11vnc -storepasswd secret ~/.vnc/passwd
 #========================================
 # Add normal user with passwordless sudo
 #========================================
-RUN sudo useradd user1 --shell /bin/bash --create-home
-RUN sudo usermod -a -G sudo user1 && \
+RUN sudo useradd selenium --shell /bin/bash --create-home
+RUN sudo usermod -a -G sudo selenium && \
     echo 'ALL ALL = (ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 #====================================================================
