@@ -13,18 +13,15 @@ echo "docker.guest.dev $CONTAINER_IP" >> /etc/hosts
 
 # Start the X server that can run on machines with no display
 # hardware and no physical input devices
-/usr/bin/Xvfb $DISPLAY -screen 0 $GEOMETRY -ac >$XVFB_LOG 2>&1 &
+sudo -E -i -u selenium /usr/bin/Xvfb $DISPLAY -screen 0 $GEOMETRY -ac >$XVFB_LOG 2>&1 &
 sleep 0.5
 
 # A fast, lightweight and responsive window manager
-fluxbox -display $DISPLAY >$FLUXBOX_LOG 2>&1 &
+sudo -E -i -u selenium fluxbox -display $DISPLAY >$FLUXBOX_LOG 2>&1 &
 
 # Start a GUI xTerm to help debugging when VNC into the container
-x-terminal-emulator -geometry 120x40+10+10 -ls -title "x-terminal-emulator" &
+sudo -E -i -u selenium x-terminal-emulator -maximized -title "x-terminal-emulator" 2>&1 &
 sleep 0.5
 
-# Start a GUI xTerm to easily debug the headless instance
-#x-terminal-emulator -geometry 100x30+10+10 -ls -title "local-sel-headless" -e "/opt/selenium/local-sel-headless.sh" 2>&1 | tee $XTERMINAL_LOG &
-
 # Start VNC server to enable viewing what's going on but not mandatory
-x11vnc -forever -shared -rfbport $VNC_PORT -display $DISPLAY > $VNC_LOG 2>&1 &
+sudo -E -i -u selenium x11vnc -forever -shared -rfbport $VNC_PORT -display $DISPLAY > $VNC_LOG 2>&1 &

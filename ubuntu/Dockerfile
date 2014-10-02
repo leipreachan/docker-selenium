@@ -7,21 +7,35 @@ ENV DEBCONF_NONINTERACTIVE_SEEN true
 #==========
 # update
 #==========
-RUN apt-get update && apt-get install -y \
-		curl \
-		ca-certificates \
-		wget \
-		unzip \
-		x11vnc \
-		xvfb \
-		screen \
-		xfonts-100dpi \
-		xfonts-75dpi \
-		xfonts-scalable \
-		xfonts-cyrillic \
-		fluxbox \
-		openjdk-7-jre-headless
-
+RUN apt-get update && apt-get install --no-install-recommends -y \
+	curl \
+	ca-certificates \
+	wget \
+	unzip \
+	x11vnc \
+	xvfb \
+	xterm \
+	xfonts-100dpi \
+	xfonts-75dpi \
+	xfonts-scalable \
+	xfonts-cyrillic \
+	screen \
+	fluxbox \
+	openjdk-7-jre-headless \
+	libasound2 #ff and chrome depend on these \
+	libc6 \
+	libcairo2 \
+	libdbus-1-3 \
+	libfontconfig1 \
+	libfreetype6 \
+	libgcc1 \
+	libgdk-pixbuf2.0-0 \
+	libglib2.0-0 \
+	libgtk2.0-0 \
+	libstdc++6 \
+	libx11-6 \
+	libxext6 \
+	libxrender1
 
 ENV SELENIUM_USER selenium
 #========================================
