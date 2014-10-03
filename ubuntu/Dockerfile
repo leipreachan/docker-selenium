@@ -74,18 +74,13 @@ ADD ./etc/hosts /tmp/hosts
 #========================
 ADD ./etc/hosts /tmp/hosts
 
-#============================
-# Some configuration options
-#============================
-EXPOSE 5900
-
 #================================
 # Expose Container's Directories
 #================================
 VOLUME /var/log/selenium
 
 ENV SCREEN_WIDTH 1280
-ENV SCREEN_HEIGHT 1024
+ENV SCREEN_HEIGHT 960
 ENV SCREEN_DEPTH 24
 ENV DISPLAY :10.0
 
@@ -94,5 +89,3 @@ ENV DISPLAY :10.0
 #========================
 RUN mkdir -p /home/$SELENIUM_USER/.vnc
 RUN x11vnc -storepasswd badoo /home/$SELENIUM_USER/.vnc/passwd
-
-
