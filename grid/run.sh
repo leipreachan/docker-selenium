@@ -1,8 +1,4 @@
 #!/bin/bash
-if [ -z "$1" ]; then
-	SELENIUM_PORT=5555
-else 
-	SELENIUM_PORT=$1
-fi
+source ../bin/settings.ini
 
-docker run -i -e SELENIUM_PORT=$SELENIUM_PORT -p $SELENIUM_PORT:$SELENIUM_PORT -v /var/log/docker-selenium-grid:/var/log/selenium -t selenium/grid
+docker run --rm -i -e SELENIUM_PORT=$SELENIUM_PORT -v $LOGS_FOLDER_LOCAL:$LOGS_FOLDER_DOCKER -p $SELENIUM_PORT:$SELENIUM_PORT --name="selenium-grid-$SELENIUM_PORT" -t selenium/grid

@@ -4,10 +4,22 @@ Linux:
 
 sudo ./build.sh
 
-cd firefox && sudo ./run.sh &
+ standalone
 
-cd googlechrome && sudo ./run.sh &
+cd firefox && sudo ./run.sh
 
+or
+
+cd googlechrome && sudo ./run.sh
+
+
+ GRID
+
+cd grid && sudo ./run.sh 5555
+
+cd firefox && sudo ./run.sh 4501 5900 localhost:5555
+
+cd googlechrome && sudo ./run.sh 4502 5901 localhost:5555
 
 voila!
 

@@ -37,7 +37,6 @@ RUN chmod 4755 ${CHROME_SANDBOX}
 
 RUN mkdir -p ~/bin
 ADD ./bin/vnc.sh /home/$SELENIUM_USER/bin/vnc.sh
-ADD ./bin/settings.ini /home/$SELENIUM_USER/bin/settings.ini
 ADD ./bin/entrypoint.sh /home/$SELENIUM_USER/bin/entrypoint.sh
 RUN chmod +x /home/$SELENIUM_USER/bin/*
 

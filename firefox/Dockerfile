@@ -20,9 +20,10 @@ RUN mkdir -p /home/$SELENIUM_USER/selenium
 RUN (cd /tmp; wget --progress=bar:force http://selenium-release.storage.googleapis.com/${SELENIUM_VERSION_MAJOR}/selenium-server-standalone-${SELENIUM_VERSION_FULL}.jar -O $SELENIUM_PATH)
 RUN chown $SELENIUM_USER:$SELENIUM_USER /home/$SELENIUM_USER/selenium/selenium-server-standalone.jar
 
+RUN ($FIREFOX_PATH/firefox-bin --version | grep 'Firefox' | awk '{print $3}' > /home/$SELENIUM_USER/firefox-version)
+
 RUN mkdir -p ~/bin
 ADD ./bin/vnc.sh /home/$SELENIUM_USER/bin/vnc.sh
-ADD ./bin/settings.ini /home/$SELENIUM_USER/bin/settings.ini
 ADD ./bin/entrypoint.sh /home/$SELENIUM_USER/bin/entrypoint.sh
 RUN chmod +x /home/$SELENIUM_USER/bin/*
 
