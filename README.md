@@ -33,10 +33,16 @@
 voila!
 
 ## MacOS install
-[http://docs.docker.com/installation/mac/] (no need sudo)
+
+[http://docs.docker.com/installation/mac/] 
+
+no need "sudo"
 
 ## Windows install
-[http://docs.docker.com/installation/windows/] (no need sudo)
+
+[http://docs.docker.com/installation/windows/] 
+
+no need "sudo"
 
 ## Issues
 
