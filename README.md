@@ -15,21 +15,28 @@
 ### Run as GRID nodes
 
 `cd grid && sudo ./run.sh 5555`
+
 > 5555 is the grid hub port by default
+
 `cd firefox && sudo ./run.sh 4501 5900 localhost:5555`
+
 > 4501 - default selenium-firefox node port
->5900 - default selenium-firefox vnc port
+
+> 5900 - default selenium-firefox vnc port
+
 `cd googlechrome && sudo ./run.sh 4551 5951 localhost:5555`
->4551 - default selenium-googlechrome node port
->5951 - default selenium-googlechrome vnc port
+
+> 4551 - default selenium-googlechrome node port
+
+> 5951 - default selenium-googlechrome vnc port
 
 voila!
 
 ## MacOS install
-http://docs.docker.com/installation/mac/ (no need sudo)
+[http://docs.docker.com/installation/mac/] (no need sudo)
 
 ## Windows install
-http://docs.docker.com/installation/windows/ (no need sudo)
+[http://docs.docker.com/installation/windows/] (no need sudo)
 
 ## Issues
 
