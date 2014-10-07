@@ -47,3 +47,11 @@ no need "sudo"
 ## Issues
 
 Folder sharing doesn't work "from the box right now". Will be fixed soon
+
+### someting to read
+
+https://github.com/boot2docker/boot2docker/blob/master/doc/WORKAROUNDS.md
+
+MacOS port sharing: https://github.com/docker/docker/issues/4007
+
+https://coderwall.com/p/fvfjyg
