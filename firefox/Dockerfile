@@ -9,7 +9,8 @@ RUN apt-get install --no-install-recommends -y firefox
 
 ENV FIREFOX_VERSION 32.0.3
 ENV FIREFOX_PATH /home/$SELENIUM_USER/firefox
-RUN (cd /tmp; wget --progress=bar:force ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/en-US/firefox-${FIREFOX_VERSION}.tar.bz2 -O /home/$SELENIUM_USER/firefox-${FIREFOX_VERSION}.tar.bz2)
+# we must use http://ftp.mozilla.org, not ftp:// 
+RUN (cd /tmp; wget --progress=bar:force http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/en-US/firefox-${FIREFOX_VERSION}.tar.bz2 -O /home/$SELENIUM_USER/firefox-${FIREFOX_VERSION}.tar.bz2)
 RUN (cd /home/$SELENIUM_USER; tar xvf /home/$SELENIUM_USER/firefox-${FIREFOX_VERSION}.tar.bz2; rm /home/$SELENIUM_USER/firefox-${FIREFOX_VERSION}.tar.bz2)
 
 ENV SELENIUM_VERSION_MAJOR 2.43
