@@ -1,27 +1,49 @@
-git clone https://github.com/leipreachan/docker-selenium
+# Installation
 
-Linux:
+`git clone https://github.com/leipreachan/docker-selenium`
 
-sudo ./build.sh
+## Linux
 
- standalone
+`sudo ./build.sh`
 
-cd firefox && sudo ./run.sh
+### Run as standalone nodes
 
-or
+`cd firefox && sudo ./run.sh`
 
-cd googlechrome && sudo ./run.sh
+`cd googlechrome && sudo ./run.sh`
 
+### Run as GRID nodes
 
- GRID
+`cd grid && sudo ./run.sh 5555`
 
-cd grid && sudo ./run.sh 5555
+> 5555 is the grid hub port by default
 
-cd firefox && sudo ./run.sh 4501 5900 localhost:5555
+`cd firefox && sudo ./run.sh 4501 5900 localhost:5555`
 
-cd googlechrome && sudo ./run.sh 4502 5901 localhost:5555
+> 4501 - default selenium-firefox node port
+
+> 5900 - default selenium-firefox vnc port
+
+`cd googlechrome && sudo ./run.sh 4551 5951 localhost:5555`
+
+> 4551 - default selenium-googlechrome node port
+
+> 5951 - default selenium-googlechrome vnc port
 
 voila!
 
+## MacOS install
 
-MacOS: http://docs.docker.com/installation/mac/ (no need sudo)
+http://docs.docker.com/installation/mac/
+
+no need "sudo"
+
+## Windows install
+
+http://docs.docker.com/installation/windows/
+
+no need "sudo"
+
+## Issues
+
+Folder sharing doesn't work "from the box right now". Will be fixed soon
