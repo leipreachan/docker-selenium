@@ -13,5 +13,5 @@ sudo -E -i -u ${SELENIUM_USER} \
 		-port ${SELENIUM_PORT} \
 		$SELENIUM_GRID \
 		-registerCycle 30000 \
-		-Dwebdriver.firefox.bin=${FIREFOX_PATH} \
+		-Dwebdriver.firefox.bin=${FIREFOX_PATH}/firefox-bin \
 		-browser seleniumProtocol=WebDriver,browserName=firefox,version=${FIREFOX_VERSION},maxInstances=1,platform=LINUX > /var/log/selenium/selenium-firefox-${SELENIUM_PORT}.log 2>&1
