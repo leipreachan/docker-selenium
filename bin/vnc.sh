@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+source ~selenium/bin/vnc_settings.ini
+
 export GEOMETRY="$SCREEN_WIDTH""x""$SCREEN_HEIGHT""x""$SCREEN_DEPTH"
 export CONTAINER_IP=$(ip addr | egrep "inet.*(wlan|eth)[0-9]+" | awk '{print $2}' | cut -d '/' -f 1)
 export DOCKER_HOST_IP=$(netstat -nr | grep '^0\.0\.0\.0' | awk '{print $2}')
@@ -6,9 +8,13 @@ export XVFB_LOG="/var/log/selenium/xvfb.${VNC_PORT}log"
 export FLUXBOX_LOG="/var/log/selenium/fluxbox.${VNC_PORT}.log"
 export VNC_LOG="/var/log/selenium/x11vnc.${VNC_PORT}.log"
 
+if [ -n "$DNS_SERVER" ]; then
+	echo "$DNS_SERVER" > /etc/resolv.conf
+fi
+
 cat /tmp/hosts >> /etc/hosts
 echo "docker.host.dev $DOCKER_HOST_IP" >> /etc/hosts
-echo "docker.guest.dev $CONTAINER_IP" >> /etc/hosts
+echo "docker.guest-${VNC_PORT}.dev $CONTAINER_IP" >> /etc/hosts
 
 # Start the X server that can run on machines with no display
 # hardware and no physical input devices

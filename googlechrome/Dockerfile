@@ -36,8 +36,9 @@ RUN chown root:root ${CHROME_SANDBOX}
 RUN chmod 4755 ${CHROME_SANDBOX}
 
 RUN mkdir -p ~/bin
-ADD ./bin/vnc.sh /home/$SELENIUM_USER/bin/vnc.sh
-ADD ./bin/entrypoint.sh /home/$SELENIUM_USER/bin/entrypoint.sh
+ADD ./bin/vnc_settings.ini /home/$SELENIUM_USER/bin/
+ADD ./bin/vnc.sh /home/$SELENIUM_USER/bin/
+ADD ./bin/entrypoint.sh /home/$SELENIUM_USER/bin/
 RUN chmod +x /home/$SELENIUM_USER/bin/*
 
 CMD ["/home/selenium/bin/entrypoint.sh"]

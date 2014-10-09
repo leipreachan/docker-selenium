@@ -24,8 +24,9 @@ RUN chown $SELENIUM_USER:$SELENIUM_USER /home/$SELENIUM_USER/selenium/selenium-s
 RUN ($FIREFOX_PATH/firefox-bin --version | grep 'Firefox' | awk '{print $3}' > /home/$SELENIUM_USER/firefox-version)
 
 RUN mkdir -p ~/bin
-ADD ./bin/vnc.sh /home/$SELENIUM_USER/bin/vnc.sh
-ADD ./bin/entrypoint.sh /home/$SELENIUM_USER/bin/entrypoint.sh
+ADD ./bin/vnc_settings.ini /home/$SELENIUM_USER/bin/
+ADD ./bin/vnc.sh /home/$SELENIUM_USER/bin/
+ADD ./bin/entrypoint.sh /home/$SELENIUM_USER/bin/
 RUN chmod +x /home/$SELENIUM_USER/bin/*
 
 CMD ["/home/selenium/bin/entrypoint.sh"]
