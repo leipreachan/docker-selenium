@@ -73,7 +73,6 @@ ADD ./etc/hosts /tmp/hosts
 # configure hosts
 #========================
 ADD ./etc/hosts /tmp/hosts
-ADD ./etc/interfaces /etc/network/interfaces
 
 #================================
 # Expose Container's Directories
