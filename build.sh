@@ -5,6 +5,7 @@ if [ -n "$(bash --version | grep apple)" ]; then
 		echo "Please, install boot2docker from this page: https://github.com/boot2docker/osx-installer/releases then restart this script"
 		exit 1
 	fi
+	boot2docker up
 fi
 
 browsers=( "cd firefox && ./build.sh" "cd googlechrome && ./build.sh" "cd grid && ./build.sh" "cd phantomjs && ./build.sh" )
