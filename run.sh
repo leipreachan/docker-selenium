@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ -n "$(bash --version | grep apple)" ]; then
+	if [ "$(boot2docker status)" == "poweroff" ]; then
+		boot2docker up
+	fi
+fi
+
 NUMBER_OF_NODES=2
 
 if [ -n "$1" ]; then
