@@ -7,7 +7,7 @@ if [ -n "$(bash --version | grep apple)" ]; then
 	fi
 fi
 
-browsers=( "cd firefox && ./build.sh" "cd googlechrome && ./build.sh" "cd grid && ./build.sh" )
+browsers=( "cd firefox && ./build.sh" "cd googlechrome && ./build.sh" "cd grid && ./build.sh" "cd phantomjs && ./build.sh" )
 size=${#browsers[@]}
 
 cd ubuntu && ./build.sh && cd ../ && printf '%s\n' "${browsers[@]}" | xargs -P $size -I{} -t sh -c "{}"
