@@ -10,4 +10,4 @@ fi
 browsers=( "cd firefox && ./build.sh" "cd googlechrome && ./build.sh" "cd grid && ./build.sh" )
 size=${#browsers[@]}
 
-cd ubuntu && ./build.sh && cd ../ && printf '%s\n' "${browsers[@]}" | xargs -P 0 -n 1 -I{} -t sh -c "{}"
+cd ubuntu && ./build.sh && cd ../ && printf '%s\n' "${browsers[@]}" | xargs -P $size -n 1 -I{} -t sh -c "{}"
