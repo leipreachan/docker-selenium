@@ -20,7 +20,7 @@
 
 it will start selenium grid and selected number of nodes of selenium WD with firefox, two with chrome and two with phantomjs
 
-`sudo ./stop.sh [number_of_nodes=2]`
+`sudo ./stop.sh`
 
 stops all the known instances of selenium nodes and grid
 
