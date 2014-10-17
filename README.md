@@ -28,7 +28,7 @@ voila!
 
 ## Linux install
 
-./build.sh script check and install docker itself
+./build.sh script checks and installs docker itself
 
 ## MacOS install
 
@@ -38,7 +38,7 @@ no need "sudo"
 
 ## Windows install
 
-http://docs.docker.com/installation/windows/
+Install boot2docker first: http://docs.docker.com/installation/windows/
 
 no need "sudo"
 ## Issues
