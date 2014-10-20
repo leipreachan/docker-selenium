@@ -15,4 +15,4 @@ sudo -E -i -u ${SELENIUM_USER} \
 		$SELENIUM_GRID \
 		-registerCycle 30000 \
 		-browser browserName=phantomjs,version=${PHANTOMJS_VERSION},maxInstances=${NUMBER_OF_NODES},platform=LINUX \
-		-Dphantomjs.binary.path=/home/selenium/phantomjs/phantomjs > /var/log/selenium/selenium-phantomjs-${SELENIUM_PORT}.log 2>&1
+		-Dphantomjs.binary.path=/home/selenium/phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs > /var/log/selenium/selenium-phantomjs-${SELENIUM_PORT}.log 2>&1
