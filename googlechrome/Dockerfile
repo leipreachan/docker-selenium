@@ -19,8 +19,8 @@ RUN apt-get update && apt-get install -y google-chrome-stable
 
 RUN (google-chrome --version | awk '{print $3}' > /home/$SELENIUM_USER/google-chrome-version)
  
-ENV SELENIUM_VERSION_MAJOR 2.43
-ENV SELENIUM_VERSION_FULL ${SELENIUM_VERSION_MAJOR}.1
+ENV SELENIUM_VERSION_MAJOR 2.44
+ENV SELENIUM_VERSION_FULL ${SELENIUM_VERSION_MAJOR}.0
 ENV SELENIUM_PATH /home/$SELENIUM_USER/selenium/selenium-server-standalone.jar
 
 RUN mkdir -p /home/$SELENIUM_USER/selenium
