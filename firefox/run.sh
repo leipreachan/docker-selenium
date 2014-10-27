@@ -4,7 +4,8 @@ source ../bin/settings.ini
 function _run()
 {
 	name="firefox"
-	docker run -d -i $HUB_ADDRESS -p $VNC_PORT:$VNC_PORT -p $SELENIUM_PORT:$SELENIUM_PORT -e VNC_PORT=$VNC_PORT -e SELENIUM_PORT=$SELENIUM_PORT $SHARES --name="selenium-${name}-$SELENIUM_PORT-$VNC_PORT"  -t "selenium/${name}" | tee ../${name}-${SELENIUM_PORT}.pid && _ok "http://$LOCAL_IP:$SELENIUM_PORT$NODE_ADDR"
+	docker run -d -i $HUB_ADDRESS -p $VNC_PORT:$VNC_PORT -p $SELENIUM_PORT:$SELENIUM_PORT -e VNC_PORT=$VNC_PORT -e SELENIUM_PORT=$SELENIUM_PORT $SHARES --name="selenium-${name}-$SELENIUM_PORT-$VNC_PORT"  -t "selenium/${name}" | tee ../${name}-${SELENIUM_PORT}.pid
+	_ok ${PIPESTATUS[0]} "http://$LOCAL_IP:$SELENIUM_PORT$NODE_ADDR"
 }
 
 _run

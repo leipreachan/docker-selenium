@@ -1,5 +1,4 @@
 #!/bin/bash
-
 by_pid=$(cat *.pid)
 if [ -n "$by_pid" ]; then
 	echo "kill docker containers by known ids"
