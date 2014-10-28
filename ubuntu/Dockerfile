@@ -61,7 +61,7 @@ RUN apt-get -qqy install language-pack-en
 # Timezone settings
 #===================
 ENV TZ "Europe/Moscow"
-RUN echo "Europe/Moscow" | sudo tee /etc/timezone
+RUN echo "${TZ}" > /etc/timezone
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 
 #===========

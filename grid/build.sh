@@ -1,3 +1,3 @@
 #!/bin/bash
-
-docker build --rm -t "selenium/grid" .
+source ../bin/settings.ini
+docker build --rm -t "${DOCKER_REGISTRY}/grid" .

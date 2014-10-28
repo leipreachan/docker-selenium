@@ -1,2 +1,3 @@
 #!/bin/bash
-docker build --rm -t "selenium/phantomjs" .
+source ../bin/settings.ini
+docker build --rm -t "${DOCKER_REGISTRY}/phantomjs" .
