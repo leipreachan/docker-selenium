@@ -7,7 +7,7 @@ ENV DEBCONF_NONINTERACTIVE_SEEN true
 
 RUN apt-get install --no-install-recommends -y firefox
 
-ENV FIREFOX_VERSION 33.0
+ENV FIREFOX_VERSION 33.0.1
 ENV FIREFOX_PATH /home/$SELENIUM_USER/firefox
 # we must use http://ftp.mozilla.org, not ftp:// 
 RUN (cd /tmp; wget --progress=bar:force http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/en-US/firefox-${FIREFOX_VERSION}.tar.bz2 -O /home/$SELENIUM_USER/firefox-${FIREFOX_VERSION}.tar.bz2)

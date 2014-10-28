@@ -5,7 +5,7 @@ MAINTAINER Artem Soldatkin <a.soldatkin@corp.badoo.com>
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
-ENV PHANTOMJS_VERSION 1.9.7
+ENV PHANTOMJS_VERSION 1.9.8
 RUN (echo "$PHANTOMJS_VERSION" > /home/$SELENIUM_USER/phantomjs-version)
 RUN (cd /tmp; wget --progress=bar:force https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOMJS_VERSION}-linux-x86_64.tar.bz2 -O /home/$SELENIUM_USER/phantomjs.tar.bz2)
 RUN (cd /home/$SELENIUM_USER; tar xvf /home/$SELENIUM_USER/phantomjs.tar.bz2; rm /home/$SELENIUM_USER/phantomjs.tar.bz2)

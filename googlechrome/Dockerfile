@@ -8,7 +8,7 @@ ENV DEBCONF_NONINTERACTIVE_SEEN true
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 
-ENV CHROMEDRIVER_VERSION 2.10
+ENV CHROMEDRIVER_VERSION 2.12
 
 RUN wget --progress=bar:force -O /home/$SELENIUM_USER/chromedriver_linux64.zip http://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip
 RUN (cd /home/$SELENIUM_USER; unzip chromedriver_linux64.zip)
