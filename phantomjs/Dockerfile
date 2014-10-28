@@ -10,7 +10,7 @@ RUN (echo "$PHANTOMJS_VERSION" > /home/$SELENIUM_USER/phantomjs-version)
 RUN (cd /tmp; wget --progress=bar:force https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOMJS_VERSION}-linux-x86_64.tar.bz2 -O /home/$SELENIUM_USER/phantomjs.tar.bz2)
 RUN (cd /home/$SELENIUM_USER; tar xvf /home/$SELENIUM_USER/phantomjs.tar.bz2; rm /home/$SELENIUM_USER/phantomjs.tar.bz2)
 
-ENV SELENIUM_VERSION_MAJOR 2.44
+ENV SELENIUM_VERSION_MAJOR 2.43
 ENV SELENIUM_VERSION_FULL ${SELENIUM_VERSION_MAJOR}.0
 ENV SELENIUM_PATH /home/$SELENIUM_USER/selenium/selenium-server-standalone.jar
 
